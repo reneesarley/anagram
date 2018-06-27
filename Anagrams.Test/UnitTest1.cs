@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Anagrams;
+using System.Collections.Generic;
+using System;
 
 namespace Anagrams.Test
 {
@@ -9,7 +11,8 @@ namespace Anagrams.Test
         [TestMethod]
         public void StringToArray_StringBreaksIntoArray_CharArray()
         {
-            Word newWord = new Word();
+            List<string> testList = new List<string> { "spaghetti", "tomatoes" };
+            Word newWord = new Word("string", testList);
             char[] letterArray = new char[5];
             letterArray = newWord.StringToArray("bread");
             char[] testArray = new char[] { 'b', 'r', 'e', 'a', 'd' };
@@ -19,8 +22,9 @@ namespace Anagrams.Test
         [TestMethod]
         public void SortArray_StringSortedAlphabetically_CharArray()
         {
-            Word newWord = new Word();
-            char[] testArray = new char[] {'a', 'b', 'd', 'e', 'r'};
+            List<string> testList = new List<string> { "spaghetti", "tomatoes" };
+            Word newWord = new Word("string", testList);
+            char[] testArray = new char[] { 'a', 'b', 'd', 'e', 'r' };
             char[] letterArray = new char[] { 'b', 'r', 'e', 'a', 'd' };
             char[] finalArray = new char[5];
             finalArray = newWord.SortArray(letterArray);
@@ -29,11 +33,71 @@ namespace Anagrams.Test
         [TestMethod]
         public void CompareWords_CompareIfWordsAreEqual_True()
         {
-            Word newWord = new Word();
+            List<string> testList = new List<string> { "spaghetti", "tomatoes" };
+            Word newWord = new Word("string", testList);
             char[] arrayOne = new char[] { 'b', 'r', 'e', 'a', 'd' };
             char[] arrayTwo = new char[] { 'b', 'r', 'e', 'a', 'd' };
             bool compareArrays = newWord.CompareWords(arrayOne, arrayTwo);
             Assert.AreEqual(compareArrays, true);
+        }
+        [TestMethod]
+        public void GetMainWord_ReturnsMainWord_String()
+        {
+            //Arrange
+            string mainWord = "Bread";
+            List<string> testList = new List<string> { "spaghetti", "tomatoes" };
+            Word newWord = new Word(mainWord, testList);
+
+            //Act
+            string result = newWord.GetMainWord();
+
+            //Assert
+            Assert.AreEqual(mainWord, result);
+        }
+        [TestMethod]
+        public void GetWordsToCheck_ReturnsWordsToCheck_List()
+        {
+            //Arrange
+            string mainWord = "Bread";
+            List<string> testList = new List<string> { "spaghetti", "tomatoes" };
+            Word newWord = new Word(mainWord, testList);
+
+            //Act
+            List<string> result = newWord.GetWordsToCheck();
+
+            //Assert
+            CollectionAssert.AreEqual(testList, result);
+        }
+        [TestMethod]
+        public void SetGetVerifiedAnagrams_ReturnVerfiedWords_List()
+        {
+            //Arrange
+            string mainWord = "Bread";
+            List<string> testList = new List<string> { "Bread" };
+            Word newWord = new Word(mainWord, testList);
+
+            //Act
+            newWord.SetVerifiedAnagrams(testList);
+            List<string> result = newWord.GetVerifiedAnagrams();
+
+            //Assert
+            CollectionAssert.AreEqual(testList, result);
+        }
+        [TestMethod]
+        public void AddVerifiedWordsToList_ReturnVerifiedList_List()
+        {
+            //Arrange
+            string mainWord = "Bread";
+            List<string> verifiedAnagramList = new List<string> { "Bread", "Apple" };
+            Word newWord = new Word(mainWord, verifiedAnagramList);
+
+            //Act
+            newWord.AddVerifiedWordsToList(mainWord);
+            newWord.AddVerifiedWordsToList("Apple");
+            List<string> result = newWord.GetVerifiedAnagrams();
+
+            //Assert
+            CollectionAssert.AreEqual(verifiedAnagramList, result);
         }
     }
 }
