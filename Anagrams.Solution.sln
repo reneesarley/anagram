@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagrams", "Anagrams\Anagrams.csproj", "{D2AA8EC6-E667-43AC-B8F6-72E073E2CAF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagrams.Test", "Anagrams.Test\Anagrams.Test.csproj", "{2ECE5671-C105-47AF-8500-00AFD0E452A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2AA8EC6-E667-43AC-B8F6-72E073E2CAF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2AA8EC6-E667-43AC-B8F6-72E073E2CAF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2AA8EC6-E667-43AC-B8F6-72E073E2CAF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2AA8EC6-E667-43AC-B8F6-72E073E2CAF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ECE5671-C105-47AF-8500-00AFD0E452A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ECE5671-C105-47AF-8500-00AFD0E452A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ECE5671-C105-47AF-8500-00AFD0E452A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ECE5671-C105-47AF-8500-00AFD0E452A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
