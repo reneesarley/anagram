@@ -88,16 +88,19 @@ namespace Anagrams.Test
         {
             //Arrange
             string mainWord = "Bread";
-            List<string> verifiedAnagramList = new List<string> { "Bread", "Apple" };
-            Word newWord = new Word(mainWord, verifiedAnagramList);
+            List<string> testList = new List<string> { "Dog" };
+            List<string> listToTestAgainstResult = new List<string> { "Bread" };
+            Console.WriteLine(listToTestAgainstResult[0]);
+            Word newWord = new Word(mainWord, testList);
+            Console.WriteLine(newWord.GetMainWord());
 
             //Act
             newWord.AddVerifiedWordsToList(mainWord);
-            newWord.AddVerifiedWordsToList("Apple");
+            //List<string> result = new List<string> { "Bread" };
             List<string> result = newWord.GetVerifiedAnagrams();
 
             //Assert
-            CollectionAssert.AreEqual(verifiedAnagramList, result);
+            CollectionAssert.AreEqual(listToTestAgainstResult, result);
         }
     }
 }

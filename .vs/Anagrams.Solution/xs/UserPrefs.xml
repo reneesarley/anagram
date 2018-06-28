@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{D2AA8EC6-E667-43AC-B8F6-72E073E2CAF9}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Anagrams.Test/UnitTest1.cs">
+    <Files>
+      <File FileName="Anagrams/Anagrams.cs" Line="1" Column="1" />
+      <File FileName="Anagrams.Test/UnitTest1.cs" Line="1" Column="1" NotebookId="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Anagrams PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
