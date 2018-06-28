@@ -92,11 +92,9 @@ namespace Anagrams.Test
             List<string> listToTestAgainstResult = new List<string> { "Bread" };
             Console.WriteLine(listToTestAgainstResult[0]);
             Word newWord = new Word(mainWord, testList);
-            Console.WriteLine(newWord.GetMainWord());
 
             //Act
             newWord.AddVerifiedWordsToList(mainWord);
-            //List<string> result = new List<string> { "Bread" };
             List<string> result = newWord.GetVerifiedAnagrams();
 
             //Assert
